@@ -15,13 +15,11 @@ df = pd.read_csv("Tab-Morph.csv")
 # compute correlation matrix
 corr = df.corr(method='kendall')
 
-# set up matplotlib figure
-f, ax = plt.subplots(figsize=(11, 9))
-
 # generate a custom diverging colormap
 cmap="RdYlBu"
 
-# draw heatmap with mask and correct aspect ratio
+# plotting heatmap
+f, ax = plt.subplots(figsize=(11, 9))
 sb.heatmap(corr, cmap=cmap, center=0,
            vmin=-1.1, vmax=1.1,
            annot=True, annot_kws={"size":8},
